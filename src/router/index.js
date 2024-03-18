@@ -23,8 +23,8 @@ const router = createRouter({
       component: EditoraView,
     },
     {
-      path: '/autores',
-      redirect: 'autores',
+      path: '/autor',
+      name: 'autor',
       component: AutorView,
     }
   ],

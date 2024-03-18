@@ -3,7 +3,7 @@ import { ref, reactive, onMounted } from "vue";
 import AutorApi from "@/api/autores";
 const autorApi = new AutorApi();
 
-const defaultAutor = { id: null, nome: "", site: "" };
+const defaultAutor = { id: null, nome: "", email: "" };
 const autores = ref([]);
 const autor = reactive({ ...defaultAutor });
 
@@ -49,7 +49,7 @@ async function excluir(id) {
   <ul>
     <li v-for="autor in autores" :key="autor.id">
       <span @click="editar(autor)">
-        ({{ autor.id }}) - {{ autor.nome }} - {{ autor.site }} -
+        ({{ autor.id }}) - {{ autor.nome }} - {{ autor.email }} -
       </span>
       <button @click="excluir(autor.id)">X</button>
     </li>
